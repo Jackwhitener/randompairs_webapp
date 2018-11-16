@@ -12,5 +12,5 @@ post '/list' do
 end
 get '/page2' do
 	list = params[:list]
-	erb: page2 locals: {list: list}
+	erb :page2 locals: {list: list}
 end
