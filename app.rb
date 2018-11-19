@@ -4,13 +4,17 @@ get '/' do
 	erb :page1
 end
 post '/list' do
-	list = params[:names].join(",")
-	p list
-	redirect 'list?list=' + list
+	check = params[:names]
+	if check == nil
+		redirect '/'
+	else
+		list = params[:names].join(",")
+		redirect 'list?list=' + list
+	end
 end
 get '/list' do
 	list = params[:list].split(",")
 	pairedlist = pair(list)
-	p pairedlist
+	puts "pairedlist: #{pairedlist}"
 	erb :page2, locals: {list: list, pairedlist: pairedlist}
 end

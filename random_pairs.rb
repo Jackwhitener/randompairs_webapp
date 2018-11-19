@@ -23,12 +23,15 @@ def pair(options)
 			pairs.sample << options[0]
 			options.delete_at(0)
 		end
-		pairs.each do |item|
-			paircounter += 1
-			str << "Pair #{paircounter}: #{item.to_s}. "
-		end
-		puts "Pairs: #{pairs}"
-		return str
-
+		# pairs.each do |item|
+		# 	item = item.to_s
+		# 	item = item.delete_prefix("[")
+		# 	item = item.delete_suffix("]")
+		# 	paircounter += 1
+		# 	str += " \n "
+		# 	str << "Pair #{paircounter}: #{item}."
+		# end
+		# puts "Pairs: #{str}"
+		return pairs
 	end
 end

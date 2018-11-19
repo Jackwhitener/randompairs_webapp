@@ -1,1 +1,8 @@
-list: <%= pairedlist %>
+<!-- list: <%= pairedlist %> -->
+<link rel="stylesheet" href="/style.css"
+<body>
+<% pairedlist.each do |x| %>
+<% x.each do |x| %>
+<%= x + " " %>
+<% end %><br>
+<% end %>
