@@ -17,6 +17,14 @@ end
 get '/list' do
 	list = params[:list].split(",")
 	pairedlist = pair(list)
-	puts "pairedlist: #{pairedlist}"
 	erb :page2, locals: {list: list, pairedlist: pairedlist}
+end
+post '/page3' do
+	pairedlist = params[:pairedlist]
+	redirect 'page3?pairedlist=' + pairedlist
+end
+get '/page3' do
+	pairedlist = eval(params[:pairedlist])
+	puts "Pairedlist: #{pairedlist}"
+	erb :page3, locals: {pairedlist: pairedlist}
 end

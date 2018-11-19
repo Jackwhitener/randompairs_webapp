@@ -1,8 +1,20 @@
-<link rel="stylesheet" href="/style.css"
+<link rel="stylesheet" href="/style.css">
 <body>
 <% pairedlist.each do |x| %>
-	<% x.each do |x| %>
-		<%= x + " " %>
+	<% x.each do |y| %>
+	<% if y == x.last %>
+			<%= y += " " %>
+		<% else %>
+			<%= y += ", " %>
+		<%end%>
 	<% end %><br>
 <% end %>
-<button type = 'button' onclick="location.reload();">Re-Pair Teams</button>
+<br>
+These are your teams. Do you want to try again, or are you finished?
+<br>
+<form id = 'page3' method = 'post' action = 'page3'>
+<input type = 'hidden' name = 'pairedlist' value = '<%= pairedlist %>'>
+<button type = 'button' onclick="location.reload();">Re-Pair Teams</button> <br>
+<input type = 'submit' value = "Finish">
+</form>
+</body>

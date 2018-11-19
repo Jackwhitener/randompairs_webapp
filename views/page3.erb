@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/style.css">
+Here's your final list:
+<br>
+<body>
+<% (pairedlist).each do |x| %>
+	<% x.each do |y| %>
+	<% if y == x.last %>
+			<%= y += " " %>
+		<% else %>
+			<%= y += ", " %>
+		<%end%>
+	<% end %><br>
+<% end %>
+<br>
