@@ -1,15 +1,15 @@
-<form id="form" method = 'post' action = '/list'>
+<form id="list" method = 'post' action = '/list'>
 <button type="button" onclick="newInput()">Add Name</button>
  <input type="submit" value="Submit">
 </form>
 <script>
 function newInput() {
-    var input = document.createElement('input');
-    var form = document.getElementById('form');
+    var inputed_name = document.createElement('input');
+    var list = document.getElementById('list');
     var linebreak = document.createElement('br');
-    input.setAttribute('type', 'text');
-    input.setAttribute('name', 'names[]');
-    input.setAttribute('value', '');
-    form.appendChild(input);
+    inputed_name.setAttribute('type', 'text');
+    inputed_name.setAttribute('name', 'names[]');
+    inputed_name.setAttribute('value', '');
+    list.appendChild(inputed_name);
     }
 </script>
