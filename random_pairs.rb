@@ -1,9 +1,11 @@
-def pair(options,func)
+def pair(options)
 	paircount = 0
 	pairs = []
 	deeppair = []
 	count = 0
 	half = options.length/2
+	str = ""
+	paircounter = 0
 	if options.class != Array
 		return "No."
 	else
@@ -21,15 +23,12 @@ def pair(options,func)
 			pairs.sample << options[0]
 			options.delete_at(0)
 		end
-		puts "Pairs: #{pairs}"
-		if func == 0
-			return paircount
-		elsif func == 1
-			return options
-		elsif func == 2
-			return pairs
-		else
-			return "No."
+		pairs.each do |item|
+			paircounter += 1
+			str << "Pair #{paircounter}: #{item.to_s}. "
 		end
+		puts "Pairs: #{pairs}"
+		return str
+
 	end
 end

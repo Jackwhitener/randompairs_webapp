@@ -1,14 +1,15 @@
-<p>Click to start adding input boxes.</p>
-<form method = 'post' action = '/list'>
+<form id="form" method = 'post' action = '/list'>
 <button type="button" onclick="newInput()">Add Name</button>
-<input type="submit" value="Submit">
+ <input type="submit" value="Submit">
 </form>
-</div>
- <script>
+<script>
 function newInput() {
-    var list = document.createElement("input");
-    list.setAttribute("type", 'text[]');
-    list.setAttribute("value", "Name Here");
-    document.body.appendChild(list);
+    var input = document.createElement('input');
+    var form = document.getElementById('form');
+    var linebreak = document.createElement('br');
+    input.setAttribute('type', 'text');
+    input.setAttribute('name', 'names[]');
+    input.setAttribute('value', '');
+    form.appendChild(input);
     }
 </script>
