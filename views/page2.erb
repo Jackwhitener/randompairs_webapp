@@ -1,8 +1,8 @@
-<!-- list: <%= pairedlist %> -->
 <link rel="stylesheet" href="/style.css"
 <body>
 <% pairedlist.each do |x| %>
-<% x.each do |x| %>
-<%= x + " " %>
-<% end %><br>
+	<% x.each do |x| %>
+		<%= x + " " %>
+	<% end %><br>
 <% end %>
+<button type = 'button' onclick="location.reload();">Re-Pair Teams</button>

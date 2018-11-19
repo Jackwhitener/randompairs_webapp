@@ -7,6 +7,8 @@ post '/list' do
 	check = params[:names]
 	if check == nil
 		redirect '/'
+	elsif check.include? ""
+		redirect '/'
 	else
 		list = params[:names].join(",")
 		redirect 'list?list=' + list
